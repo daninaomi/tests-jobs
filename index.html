@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        
+        const URL_TO_FETCH = 'https://reqres.in/api/users';
+        fetch(URL_TO_FETCH, {
+            method: 'get' // opcional 
+        })
+            .then(function (response) {
+
+                response.json().then(function (data) {
+                    console.log(data);
+                });
+
+
+                let dados = {
+                    "page": 1,
+                    "per_page": 3,
+                    "total": 12, "total_pages": 4, "data": [{ "id": 1, "first_name": "George", "last_name": "Bluth", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg" }, { "id": 2, "first_name": "Janet", "last_name": "Weaver", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg" }, { "id": 3, "first_name": "Emma", "last_name": "Wong", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg" }]
+                }
+
+
+
+                console.log(dados);
+
+                //     }
+            })
+            .catch(function (err) {
+                console.error(err);
+            });
+    </script>
+</body>
+
+</html>
